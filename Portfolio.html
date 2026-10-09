@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Boopathi Raja S D | Full Stack Developer & Data Analyst</title>
+        <style>
+    :root {
+  --bg: #f7f8fb;
+  --card: #fff;
+  --text: #1b2030;
+  --muted: #5b6478;
+  --accent: #4f46e5;
+  --accent2: #0ea5e9;
+  --line: #e3e6ee;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1220;
+    --card: #181c30;
+    --text: #eef0f8;
+    --muted: #9aa3bd;
+    --accent: #8b84ff;
+    --accent2: #38bdf8;
+    --line: #2a3050;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #0f1220;
+  --card: #181c30;
+  --text: #eef0f8;
+  --muted: #9aa3bd;
+  --accent: #8b84ff;
+  --accent2: #38bdf8;
+  --line: #2a3050;
+}
+
+/* =========================
+   RESET
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 75px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  min-height: 64px;
+  padding: 12px 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  background: color-mix(
+    in srgb,
+    var(--bg) 88%,
+    transparent
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+
+nav b {
+  font-size: 1.1rem;
+  white-space: nowrap;
+}
+
+nav div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 18px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+nav a {
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+  background: none;
+  border: 1px solid var(--line);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 5px 11px;
+  cursor: pointer;
+  font: inherit;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+button:hover {
+  border-color: var(--accent);
+  background: color-mix(
+    in srgb,
+    var(--accent) 8%,
+    transparent
+  );
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 5vw;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  min-height: calc(100vh - 64px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 190px;
+  align-items: center;
+  gap: 60px;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.hero > div:first-child {
+  min-width: 0;
+}
+
+.hero small {
+  display: inline-block;
+
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  margin-bottom: 8px;
+}
+
+h1 {
+  margin: 0 0 18px;
+
+  font-size: clamp(2.1rem, 6vw, 3.6rem);
+  line-height: 1.1;
+
+  letter-spacing: -0.03em;
+}
+
+h1 span {
+  background:
+    linear-gradient(
+      90deg,
+      var(--accent),
+      var(--accent2)
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+.hero p {
+  max-width: 620px;
+
+  margin: 0;
+
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+
+/* =========================
+   AVATAR
+========================= */
+
+.avatar {
+  width: 190px;
+  height: 190px;
+
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--accent),
+      var(--accent2)
+    );
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 3.4rem;
+  font-weight: 700;
+
+  box-shadow:
+    0 10px 40px
+    color-mix(
+      in srgb,
+      var(--accent) 35%,
+      transparent
+    );
+
+  animation: avatarColor 3s infinite;
+}
+
+@keyframes avatarColor {
+  0% {
+    color: yellow;
+  }
+
+  25% {
+    color: rgb(144, 144, 89);
+  }
+
+  50% {
+    color: rgb(121, 6, 22);
+  }
+
+  75% {
+    color: rgb(176, 176, 170);
+  }
+
+  100% {
+    color: yellow;
+  }
+}
+
+/* =========================
+   HERO BUTTONS
+========================= */
+
+.btns {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 44px;
+  padding: 10px 22px;
+
+  border-radius: 10px;
+  border: 1px solid var(--accent);
+
+  font-weight: 600;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn.p {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* =========================
+   HEADINGS
+========================= */
+
+h2 {
+  margin: 0 0 6px;
+
+  font-size: 1.8rem;
+  line-height: 1.25;
+}
+
+.sub {
+  margin: 0 0 30px;
+  color: var(--muted);
+}
+
+/* =========================
+   GRID / CARDS
+========================= */
+
+.grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(250px, 1fr)
+    );
+
+  gap: 20px;
+}
+
+.card {
+  height: 100%;
+
+  padding: 22px;
+
+  background: var(--card);
+
+  border: 1px solid var(--line);
+  border-radius: 14px;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+
+  border-color: color-mix(
+    in srgb,
+    var(--accent) 40%,
+    var(--line)
+  );
+
+  box-shadow:
+    0 8px 25px
+    color-mix(
+      in srgb,
+      var(--accent) 10%,
+      transparent
+    );
+}
+
+.card h3 {
+  margin: 0 0 7px;
+  font-size: 1.1rem;
+}
+
+.card p {
+  margin: 0 0 14px;
+
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* =========================
+   TAGS
+========================= */
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.tags span {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 4px 10px;
+
+  border-radius: 99px;
+
+  background:
+    color-mix(
+      in srgb,
+      var(--accent) 12%,
+      transparent
+    );
+
+  color: var(--accent);
+
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.stats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(140px, 1fr)
+    );
+
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.stat {
+  min-height: 105px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 18px;
+
+  text-align: center;
+
+  border: 1px solid var(--line);
+  border-radius: 14px;
+
+  background: var(--card);
+}
+
+.stat b {
+  display: block;
+
+  font-size: 1.8rem;
+  line-height: 1.2;
+
+  color: var(--accent);
+}
+
+.stat span {
+  margin-top: 5px;
+
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* =========================
+   SKILL BARS
+========================= */
+
+.bar {
+  margin-bottom: 18px;
+}
+
+.bar div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 6px;
+
+  font-size: 0.92rem;
+}
+
+.track {
+  width: 100%;
+  height: 8px;
+
+  overflow: hidden;
+
+  background: var(--line);
+  border-radius: 99px;
+}
+
+.fill {
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--accent),
+      var(--accent2)
+    );
+
+  border-radius: 99px;
+}
+
+/* =========================
+   TWO COLUMN LAYOUT
+========================= */
+
+.two {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(300px, 1fr)
+    );
+
+  gap: 50px;
+
+  align-items: start;
+}
+
+/* =========================
+   TIMELINE
+========================= */
+
+.tl {
+  border-left: 2px solid var(--line);
+  padding-left: 25px;
+}
+
+.tl .item {
+  position: relative;
+
+  margin-bottom: 30px;
+}
+
+.tl .item:last-child {
+  margin-bottom: 0;
+}
+
+.tl .item::before {
+  content: "";
+
+  position: absolute;
+
+  left: -32px;
+  top: 5px;
+
+  width: 12px;
+  height: 12px;
+
+  border-radius: 50%;
+
+  background: var(--accent);
+
+  box-shadow:
+    0 0 0 4px var(--bg);
+}
+
+.tl h3 {
+  margin: 0;
+
+  font-size: 1.05rem;
+}
+
+.tl small {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.tl p {
+  margin: 5px 0 0;
+
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-box {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(280px, 1fr)
+    );
+
+  gap: 40px;
+
+  align-items: start;
+}
+
+input,
+textarea {
+  display: block;
+
+  width: 100%;
+
+  padding: 11px 14px;
+  margin-bottom: 12px;
+
+  border-radius: 10px;
+  border: 1px solid var(--line);
+
+  background: var(--card);
+  color: var(--text);
+
+  font: inherit;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--accent);
+
+  box-shadow:
+    0 0 0 3px
+    color-mix(
+      in srgb,
+      var(--accent) 12%,
+      transparent
+    );
+}
+
+textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+/* =========================
+   LINKS
+========================= */
+
+.links a {
+  display: block;
+
+  padding: 11px 0;
+
+  color: var(--muted);
+
+  border-bottom: 1px solid var(--line);
+
+  transition: color 0.2s ease;
+}
+
+.links a:hover {
+  color: var(--accent);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  padding: 30px 5vw;
+
+  text-align: center;
+
+  color: var(--muted);
+  font-size: 0.85rem;
+
+  border-top: 1px solid var(--line);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+  nav {
+    min-height: 60px;
+    padding: 10px 5vw;
+  }
+
+  nav div {
+    gap: 10px;
+  }
+
+  nav div a {
+    display: none;
+  }
+
+  section {
+    padding: 60px 5vw;
+  }
+
+  .hero {
+    min-height: auto;
+
+    grid-template-columns: 1fr;
+
+    gap: 28px;
+
+    padding-top: 65px;
+    text-align: center;
+  }
+
+  .hero p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .avatar {
+    order: -1;
+
+    width: 130px;
+    height: 130px;
+
+    margin: 0 auto;
+
+    font-size: 2.4rem;
+  }
+
+  .btns {
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: clamp(
+      2rem,
+      11vw,
+      3rem
+    );
+  }
+
+  .two,
+  .contact-box {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 420px) {
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .btns {
+    width: 100%;
+  }
+
+  .tl {
+    padding-left: 20px;
+  }
+
+  .tl .item::before {
+    left: -27px;
+  }
+}
+
+/* =========================
+   PRINT
+========================= */
+
+@media print {
+  nav,
+  button {
+    display: none;
+  }
+
+  section {
+    padding: 30px 0;
+  }
+}
+
+</style>
+    </head>
+    <body>
+        <!-- Text will appear here -->
+        <nav>
+            <h2 id="typingText"></h2>
+            <div><a href="#about">About</a><a href="#skills">Skills</a><a
+                    href="#stacks">Stacks</a><a href="#experience">Journey</a><a
+                    href="#projects">Projects</a><a
+                    href="#contact">Contact</a><button id="t"
+                    aria-label="Toggle theme">◐</button></div>
+        </nav>
+        <script>
+        // Text to be typed
+        let text = "Boopathi Raja S D";
+
+        // Current character position
+        let index = 0;
+
+        // Function for typing the text
+        function typeText() {
+
+            // Add one character at a time
+            if (index < text.length) {
+                document.getElementById("typingText").innerHTML += text.charAt(index);
+
+                // Move to the next character
+                index++;
+
+                // Continue typing after 100 milliseconds
+                setTimeout(typeText, 100);
+            } 
+            else {
+                // Wait for 1 second after completing the text
+                setTimeout(deleteText, 100);
+            }
+        }
+
+        // Function to delete the text
+        function deleteText() {
+
+            // Get the current text
+            let element = document.getElementById("typingText");
+
+            // Remove one character
+            element.innerHTML = element.innerHTML.slice(0, -1);
+
+            // Continue deleting
+            if (element.innerHTML.length > 0) {
+                setTimeout(deleteText, 100);
+            } 
+            else {
+                // Reset the index and start typing again
+                index = 0;
+                typeText();
+            }
+        }
+
+        // Automatically start the loop
+        typeText();
+    </script>
+        <section class="hero">
+            <div>
+                <small>Hello, I'm</small>
+                <h1><span>Boopathi Raja S D</span><br>Full Stack Developer &amp;
+                    Data Analyst &amp; Testing</h1>
+                <p>I build dependable software with C, C++, C#/.NET, Python and
+                    Java, &amp; Data Analyst &amp; Testing from low-level
+                    programs to complete web applications, and I turn raw data
+                    into clear insights.</p>
+                <div class="btns"><a class="btn p" href="#projects">View
+                        Projects</a><a class="btn" href="#contact">Contact
+                        Me</a><button class="btn" onclick="window.print()">Save
+                        as PDF</button></div>
+            </div>
+            <div
+                class="avatar">BR</div><!-- EDIT: replace with <img src="photo.jpg" class="avatar"> -->
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p class="sub">A developer who enjoys solving problems end to
+                end.</p>
+            <p style="max-width:760px">I'm Boopathi Raja S D, a developer with
+                hands-on knowledge of C, C++, C# and full stack development in
+                .NET, Python and Java, along with data analysis. I like building
+                clean, maintainable applications, working with databases and
+                APIs, and using data to support better decisions. I'm always
+                learning new tools and open to opportunities where I can grow
+                and contribute. <!-- EDIT: add your own story --></p>
+            <div class="stats">
+                <div class="stat"><b>7+</b><span>Technologies</span></div>
+                <div class="stat"><b>3</b><span>Full Stack Paths</span></div>
+                <div
+                    class="stat"><b>10+</b><span>Projects</span></div><!-- EDIT -->
+                <div class="stat"><b>∞</b><span>Curiosity</span></div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <p class="sub">Languages, platforms and tools I work with.</p>
+            <div class="two">
+                <div>
+                    <div class="bar"><div><span>C</span></div><div
+                            class="track"><div class="fill"
+                                style="width:85%"></div></div></div>
+                    <div class="bar"><div><span>C++</span></div><div
+                            class="track"><div class="fill"
+                                style="width:85%"></div></div></div>
+                    <div class="bar"><div><span>C#</span></div><div
+                            class="track"><div class="fill"
+                                style="width:90%"></div></div></div>
+                    <div class="bar"><div><span>Python</span></div><div
+                            class="track"><div class="fill"
+                                style="width:90%"></div></div></div>
+                </div>
+                <div>
+                    <div class="bar"><div><span>Java</span></div><div
+                            class="track"><div class="fill"
+                                style="width:85%"></div></div></div>
+                    <div class="bar"><div><span>.NET Full Stack</span></div><div
+                            class="track"><div class="fill"
+                                style="width:88%"></div></div></div>
+                    <div class="bar"><div><span>Data Analysis</span></div><div
+                            class="track"><div class="fill"
+                                style="width:85%"></div></div></div>
+                    <div class="bar"><div><span>SQL &amp;
+                                Databases</span></div><div class="track"><div
+                                class="fill"
+                                style="width:80%"></div></div></div>
+                    <div class="bar"><div><span>Testing</span></div><div
+                            class="track"><div class="fill"
+                                style="width:85%"></div></div></div>
+                </div>
+            </div>
+            <div class="tags" style="margin-top:10px"><span>Git &amp;
+                    GitHub</span><span>REST APIs</span><span>Visual
+                    Studio</span><span>VS
+                    Code</span><span>Eclipse</span><span>Postman</span><span>Tableau</span><span>Power
+                    BI</span><span>Excel</span><span>Jupyter</span></div><!-- EDIT: keep only tools you use -->
+        </section>
+
+        <section id="stacks">
+            <h2>Full Stack Expertise</h2>
+            <p class="sub">What I can build, front to back.</p>
+            <div class="grid">
+                <div class="card"><h3>.NET Full Stack</h3><p>Enterprise web apps
+                        and APIs with C# on the backend.</p><div
+                        class="tags"><span>C#</span><span>ASP.NET
+                            Core</span><span>Web
+                            API</span><span>MySQL</span></div></div>
+                <div class="card"><h3>Python Full Stack</h3><p>Fast, clean web
+                        apps and REST services.</p><div
+                        class="tags"><span>Python</span><span>Django</span><span>REST</span><span>MySQL</span>
+                    </div>
+                </div>
+                <div class="card"><h3>Java Full Stack</h3><p>Scalable,
+                        production-grade services and UIs.</p>
+                    <div
+                        class="tags"><span>Java</span><span>Spring
+                            Boot</span><span>JDBC</span><span>MySQL</span><span>REST</span>
+                    </div>
+                </div>
+                <div class="card"><h3>Data Analysis</h3><p>Cleaning, exploring
+                        and visualizing data to support decisions.</p>
+                    <div
+                        class="tags"><span>Python</span><span>Pandas</span><span>NumPy</span><span>Matplotlib</span><span>Excel</span><span>MySQL</span><span>Tableau</span><span>Power
+                            BI</span>
+                        </div>
+                    </div>
+                <div class="card"><h3>C &amp; C++</h3><p>Systems programming,
+                        data structures and performance-focused code.</p>
+                    <div
+                        class="tags"><span>C</span><span>C++</span><span>OOP</span>
+                    </div>
+                </div>
+                <div class="card"><h3>Frontend</h3><p>Responsive interfaces that
+                        connect to every backend above.</p><div
+                        class="tags"><span>HTML</span><span>CSS</span><span>Bootstrap</span><span>JavaScript</span><span>Jquery</span><span>React</span></div></div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Journey</h2>
+            <p class="sub">Education, experience and certifications.</p>
+            <div class="tl">
+
+                <div class="item"><small>2010 –
+                        2013</small><h3>B.com</h3><p>Perarignar Anna Science
+                        College, Dharugapuram., M.S.University,
+                        Tirunelveli.. CGPA / 58%. <!-- EDIT --></p>
+                </div>
+                <div class="item"><small>2013 –
+                        2015</small><h3>MBA</h3><p>M.S.University.,
+                        M.S.University,
+                        Tirunelveli.. CGPA / 59%. <!-- EDIT --></p>
+                </div>
+                <div
+                    class="item"><small>Certifications</small><br><small>18-08-2022
+                        – Present</small><h3>Pumo Technovation Full Stack
+                        Developer &amp; Data Analyst &amp;
+                        Testing</h3><p>(C,C++,C#,Python, Java, .NET, Datax  
+                        Analytics,Testing etc.). <!-- EDIT --></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="grid">
+                <div class="card"><h3>Login &amp; Authentication App</h3><p>User
+                        registration and secure login with a React frontend,
+                        Django backend and MySQL database.</p>
+                <div
+                        class="tags"><span>React</span><span>Django</span><span>MySQL</span>
+                </div>
+            </div>
+                <div class="card"><h3>Employee Management System</h3><p>CRUD
+                        application with role-based access and reporting.
+                        <!-- EDIT --></p>
+                <div
+                        class="tags"><span>C#</span><span>ASP.NET
+                            Core</span><span>NET SDK</span><span>MySQL</span>
+                </div>
+            </div>
+                <div class="card">
+                    <h3>Sales Data Dashboard</h3>
+
+                    <p>
+                        Cleaned and analysed sales data to identify trends,
+                        performance patterns, and key business insights.
+                    </p>
+
+                    <div class="tags">
+                        <span>Python</span>
+                        <span>Pandas</span>
+                        <span>Excel</span>
+                        <span>Tableau</span>
+                        <span>Power BI</span>
+                    </div>
+                </div>
+
+                <div class="card"><h3>Online Booking System</h3><p>Backend
+                        services and a web interface for booking and payments.
+                        <!-- EDIT --></p>
+                <div
+                        class="tags"><span>Java</span><span>Spring
+                            Boot</span><span>MySQL</span>
+                </div>
+                </div>
+                <div class="card"><h3>Data Structures Library</h3><p>Reusable
+                        implementations of core structures and algorithms.
+                        <!-- EDIT --></p>
+                <div
+                        class="tags"><span>C++</span><span>STL</span><span>Algorithms</span>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <p class="sub">Open to full stack and data roles. Let's talk.</p>
+            <div class="contact-box">
+                <div>
+                    <input id="n" placeholder="Your name">
+                    <input id="e" type="email" placeholder="Your email">
+                    <textarea id="m" rows="5"
+                        placeholder="Your message"></textarea>
+                    <button class="btn p" onclick="send()">Send Message</button>
+                </div>
+                <div class="links">
+                    <a href="mailto:you@example.com">✉
+                        boopathi655@gmail.com</a><!-- EDIT -->
+                    <a href="tel:+910000000000">☎ +91
+                        9095677701</a><!-- EDIT -->
+                    <a href="#">https://github.com/</a><!-- EDIT -->
+                    <a href="#">https://www.linkedin.com/feed/</a><!-- EDIT -->
+                    <a href="#">📍 Chennai, Tamil Nadu, India</a>
+                </div>
+            </div>
+        </section>
+
+        <footer>© 2026 Boopathi Raja S D. All rights reserved.</footer>
+
+        <script>
+(
+    function(){
+  var r=document.documentElement,
+  b=document.getElementById('t');
+  try{
+    var s=localStorage.getItem('theme');
+  if(s)r.setAttribute('data-theme',s)
+}
+catch(e){}
+  b.onclick=function(){
+    var d=r.getAttribute('data-theme')==='dark'||(!r.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);
+    var n=d?'light':'dark';
+    r.setAttribute('data-theme',n);
+    try{localStorage.setItem('theme',n)}catch(e){}
+  };
+})();
+function send(){
+  var n=document.getElementById('n').value,
+  e=document.getElementById('e').value,
+  m=document.getElementById('m').value;
+  location.href='mailto:you@example.com?subject='+encodeURIComponent('Portfolio message from '+n)+'&body='+encodeURIComponent(m+'\n\n'+n+' ('+e+')'); /* EDIT email */
+}
+</script>
+    </body>
+</html>
